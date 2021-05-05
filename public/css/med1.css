@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+body{
+    background: url('med2.jpeg') no-repeat fixed ;
+    background-size: cover;
+    font:2rem;
+    font-family: 'Poppins', sans-serif;
+}
+tr, th, td{
+    border: 2px solid lightgrey;
+    font-weight: 900;
+    text-align:center;
+  }
+  .one{
+    /*border: 2px solid red;*/
+    margin:2%;
+}
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>request</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/med1.css">
+</head>
+<body >
+  <div class="one">
+      <h1 align="center">Medicine Donation </h1>
+      <% if (locals.err) {%>
+      <table class="container">
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Contact</th>
+        <th>Medicine</th>
+        <th>Expiry date</th>
+        <th>Action</th>
+      </tr>
+       <%  data.forEach(function(data){%>
+        <tr>
+            <td><%=data.fname %></td>
+            <td><%=data.city %></td>
+            <td><%=data.contact %></td>
+            <td><%=data.medicine%></td>
+            <td><%=data.exp %></td>
+            
+            <td colspan="6">
+                <form method="post" action="/d/<%= data.did %>">
+                    <button type="submit" name="delete" class="btn btn-outline-danger">Delete</button>                 
+                </form>
+            </td>
+                  
+        </tr>
+        <%  }); %>
+        </table>
+             <% } %>
+
+    <% if (locals.corr) { %>
+        <h2>no request yet </h2>
+      <% } %>
+  </div>
+  </body>  
+</html>
